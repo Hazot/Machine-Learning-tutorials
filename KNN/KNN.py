@@ -12,6 +12,10 @@ from sklearn import linear_model, preprocessing
 # importing the data
 data = pd.read_csv("car.data")
 print(data.head())
+print("=======================")
+print(data.tail())
+print("=======================")
+
 
 # Encode the data into integers
 le = preprocessing.LabelEncoder()
@@ -24,7 +28,7 @@ safety = le.fit_transform(list(data["safety"]))
 cls = le.fit_transform(list(data["class"]))
 print(safety)
 
-# Combine our data into the same label with zip (combine into a tuple)
+# Combine our data into the same label with zip (combines the data into a tuple)
 x = list(zip(buying, maint, door, persons, lug_boot, safety))  # features
 y = list(cls)  # labels
 
