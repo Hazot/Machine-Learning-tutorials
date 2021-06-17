@@ -1,3 +1,6 @@
+# k means -> k clusters
+# 10 digits -> 10 clusters (10 X's)
+
 from time import time
 import numpy as np
 import matplotlib.pyplot as plt
@@ -40,6 +43,7 @@ def bench_k_means(estimator, name, data):
              metrics.silhouette_score(data, estimator.labels_,
                                       metric='euclidean',
                                       sample_size=sample_size)))
+
 
 bench_k_means(KMeans(init='k-means++', n_clusters=n_digits, n_init=10),
               name="k-means++", data=data)

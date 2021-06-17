@@ -1,4 +1,5 @@
-# Used to classify data to be certain points
+# Used to classify data to be certain points (maximise margin and same distance between 2 nearest points)
+# svm is better
 
 import sklearn
 from sklearn import datasets
@@ -19,17 +20,27 @@ x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y
 
 classes = ["malignant", "benign"]
 
-clf = svm.SVC(kernel='linear', C=2)
-# clf = svm.SVC()
+clf = svm.SVC(kernel='linear', C=1)
 clf.fit(x_train, y_train)
 
 y_pred = clf.predict(x_test)
 acc = metrics.accuracy_score(y_test, y_pred)
 print(acc)
 
-clf2 = KNeighborsClassifier(n_neighbors=13)
+print("==================")
+
+clf2 = svm.SVC(kernel='linear', C=2)
 clf2.fit(x_train, y_train)
 
 y_pred2 = clf2.predict(x_test)
 acc2 = metrics.accuracy_score(y_test, y_pred2)
 print(acc2)
+
+print("==================")
+
+clf3 = KNeighborsClassifier(n_neighbors=13)
+clf3.fit(x_train, y_train)
+
+y_pred3 = clf3.predict(x_test)
+acc3 = metrics.accuracy_score(y_test, y_pred3)
+print(acc3)

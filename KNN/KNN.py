@@ -43,6 +43,8 @@ predicted = model.predict(x_test)
 names = ["acc", "good", "unacc", "vgood"]
 
 for i in range(len(predicted)):
+    # print("tabarnak: ", predicted[i])
+    # print("==========================")
     print("Predicted: ", names[predicted[i]], "Data: ", x_test[i], "Actual: ", names[y_test[i]])
     n = model.kneighbors([x_test[i]], 9, True)
     print("N: ", n)
