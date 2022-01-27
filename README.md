@@ -1,9 +1,3 @@
 # Machine-Learning-tutorials
 
-Tutorial
-
-test
-
-test2
-
-test3
+Some testing on basic ML things.
