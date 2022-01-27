@@ -25,7 +25,7 @@ clf.fit(x_train, y_train)
 
 y_pred = clf.predict(x_test)
 acc = metrics.accuracy_score(y_test, y_pred)
-print(acc)
+print("SVM, Regularization = 1", acc)
 
 print("==================")
 
@@ -34,7 +34,7 @@ clf2.fit(x_train, y_train)
 
 y_pred2 = clf2.predict(x_test)
 acc2 = metrics.accuracy_score(y_test, y_pred2)
-print(acc2)
+print("SVM, Regularization = 2", acc2)
 
 print("==================")
 
@@ -43,4 +43,4 @@ clf3.fit(x_train, y_train)
 
 y_pred3 = clf3.predict(x_test)
 acc3 = metrics.accuracy_score(y_test, y_pred3)
-print(acc3)
+print("KNN, k=13", acc3)

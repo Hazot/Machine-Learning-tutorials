@@ -40,17 +40,12 @@ def bench_k_means(estimator, name, data):
              metrics.v_measure_score(labels, estimator.labels_),
              metrics.adjusted_rand_score(labels, estimator.labels_),
              metrics.adjusted_mutual_info_score(labels,  estimator.labels_),
-             metrics.silhouette_score(data, estimator.labels_,
-                                      metric='euclidean',
-                                      sample_size=sample_size)))
+             metrics.silhouette_score(data, estimator.labels_, metric='euclidean', sample_size=sample_size)))
 
 
-bench_k_means(KMeans(init='k-means++', n_clusters=n_digits, n_init=10),
-              name="k-means++", data=data)
+bench_k_means(KMeans(init='k-means++', n_clusters=n_digits, n_init=10), name="k-means++", data=data)
 
-bench_k_means(KMeans(init='random', n_clusters=n_digits, n_init=10),
-              name="random", data=data)
-
+bench_k_means(KMeans(init='random', n_clusters=n_digits, n_init=10), name="random", data=data)
 
 print(82 * '_')
 
